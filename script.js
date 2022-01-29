@@ -2,14 +2,12 @@
 	WEB 303 Assignment 1 - jQuery
 	{Manjot Singh}
 */
-function calcAmount() {
-	const $salary = $("#yearly-salary").val();
-	const $percent = $("#percent").val();
-	const $amountTOSpend = ($salary * $percent) / 100;
-	$("#amount").text("$" + $amountTOSpend.toFixed(2));
-  }
-  
-  //keyup instead of change updates whenever a key is pressed.
-  $salary.keyup(calcAmount);
-$percent.keyup(calcAmount);
-
+$(document).ready(function(){
+	$("label").keyup(function(){
+	const Ysalary = $("#yearly-salary").val();
+	const P = $("#percent").val();
+	const spendingAmount = (Ysalary * P) / 100;
+	$("#amount").text("$" + spendingAmount.toFixed(2));
+  });
+ 
+});
